@@ -1,0 +1,48 @@
+Resource allocation
+ATMEGA48 (32-pin TQFP) pin allocation:
+
+   1. +PD3 (PCINT19/OC2B/INT1) - triac control output 2
+   2. +PD4 (PCINT20/XCK/T0) - pushbutton 1
+   3. +GND - ground
+   4. +VCC - +5V
+   5. +GND - ground
+   6. +VCC - +5V
+   7. +PB6 (PCINT6/XTAL1/TOSC1) -? perhaps internal oscillator/germetic contact 3/wireless
+   8. +PB7 (PCINT7/XTAL2/TOSC2) -? perhaps internal oscillator/germetic contact 4/wireless
+   9. +PD5 (PCINT21/OC0B/T1) - triac control output 1
+  10. +PD6 (PCINT22/OC0A/AIN0) - pushbutton 2
+  11. +PD7 (PCINT23/AIN1) - output for SPI SS signal to control CAN curcuitry
+  12. -PB0 (PCINT0/CLKO/ICP1) - germetic contact 1
+  13. -PB1 (PCINT1/OC1A) - germetic contact 2/external DAC SS
+  14. -PB2 (PCINT2/SS/OC1B) - simplified CAN comm/sensor strobe
+  15. +PB3 (PCINT3/OC2A/MOSI) - SPI MOSI
+  16. +PB4 (PCINT4/MISO) - SPI MISO
+  17. +PB5 (SCK/PCINT5) - SPI SCK
+  18. +AVCC - +5V, filtered
+  19. -ADC6 - analog input for exhaust gas sensor
+  20. -AREF - +5V, filtered
+  21. +GND - ground
+  22. -ADC7 - analog input for CO sensor
+  23. +PC0 (ADC0/PCINT8) - CAN SPI interrupt request
+  24. -PC1 (ADC1/PCINT9) - microphone amplifier input
+  25. -PC2 (ADC2/PCINT10) - current sensor 1
+  26. +PC3 (ADC3/PCINT11) - current sensor 2
+  27. -PC4 (ADC4/SDA/PCINT12) - exhaust gas sensor heater strobe/IC shutdown/I2C extension
+  28. -PC5 (ADC5/SCL/PCINT13) - CO sensor heater strobe/IC reset/I2C extension
+  29. +PC6 (RESET/PCINT14) - reset, in-system programming
+  30. +PD0 (RXD/PCINT16) - pushbutton 3
+  31. +PD1 (TXD/PCINT17) - pushbutton 4
+  32. -PD2 (INT0/PCINT18) - zero cross detector interrupt
+
+Interrupt priorities
+
+   1. zero cross detector interrupt - INT0
+   2. germetic contacts - PCINT0,1,6,7
+   3. CAN SPI interrupt request - PCINT8
+   4. pushbuttons - PCINT16,17,20,21
+
+Note 1.
+PCINT0-7 cause Pin Change Interrupt request 0, PCINT8-15 cause Pin Change Interrupt request 1, PCINT16-23 cause Pin Change Interrupt request 0, thus there is the reason to group inputs so that the interrupts correspond to the groups, to simplify dispatching.
+
+Note 2.
+PC4,PC5 use digital power when are used as ADCs.
