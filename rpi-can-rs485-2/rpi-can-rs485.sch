@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.2">
+<eagle version="6.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -10468,8 +10468,8 @@ Grid 5.08 mm&lt;p&gt;
 <wire x1="279.4" y1="198.12" x2="0" y2="198.12" width="0.1524" layer="94"/>
 <wire x1="0" y1="198.12" x2="0" y2="0" width="0.1524" layer="94"/>
 <text x="48.26" y="190.5" size="3.81" layer="94">Raspberry PI connector</text>
-<text x="63.5" y="109.22" size="3.81" layer="94">2x CAN</text>
-<text x="149.86" y="157.48" size="3.81" layer="94">Optically isolated RS-485</text>
+<text x="63.5" y="109.22" size="3.81" layer="94">CAN</text>
+<text x="149.86" y="157.48" size="3.81" layer="94">RS-485 with Auto TX Enable</text>
 <text x="193.04" y="71.12" size="1.778" layer="94">Auto TX enable (40uS)</text>
 <wire x1="152.4" y1="0" x2="152.4" y2="27.94" width="0.1524" layer="94"/>
 <wire x1="152.4" y1="27.94" x2="279.4" y2="27.94" width="0.1524" layer="94"/>
