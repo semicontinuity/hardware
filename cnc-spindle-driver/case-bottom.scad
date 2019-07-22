@@ -61,13 +61,14 @@ module standoff(height) {
 module standoff_hole(height) {
     
     union() {
-        translate([0, 0, height/2]) cylinder(r=M3_SCREW_DIAMETER/2, h=height,center=true);
+        translate([0, 0, height/2]) cylinder(r=M3_SCREW_DIAMETER/2, h=height,center=true, $fn=72);
        
         translate([0, 0, M3_SCREW_SUNK_DEPTH/2]) cylinder(
             h = M3_SCREW_SUNK_DEPTH,
             r1 = M3_SCREW_HEAD_DIAMETER/2,
             r2 = M3_SCREW_DIAMETER/2,
-            center = true
+            center = true,
+            $fn=72
         );
     }
 }
