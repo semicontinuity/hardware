@@ -1,11 +1,12 @@
-hw1 = 4;
-hw2 = 6.3;
+// from bottom
+hw1 = 7.2;
+hw2 = 11.2;
 hw3 = 4.1;
 hw4 = 6.3;
 
-h1 = 2.5;
-h2 = 2.0;
-h3 = 2.2;
+h1 = 4;
+h2 = 3.0;
+h3 = 4.0;
 h4 = 20;
 
 linear_extrude(height = 25)
