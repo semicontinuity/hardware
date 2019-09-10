@@ -1,0 +1,75 @@
+//!OpenSCAD
+CASE_THICKNESS = 1;
+CASE_THICKNESS_BOTTOM = 1.5;
+CASE_THICKNESS_TOP = 1.5;
+PCB_THICKNESS = 1;
+CONNECTOR_HEIGHT = 6;
+
+INNER_WIDTH = 45;
+INNER_DEPTH = 20;
+INNER_HEIGHT = CASE_THICKNESS_BOTTOM + PCB_THICKNESS + CONNECTOR_HEIGHT - CASE_THICKNESS_TOP;
+
+CASE_WIDTH = INNER_WIDTH + 2*CASE_THICKNESS;
+CASE_DEPTH = INNER_DEPTH + 2*CASE_THICKNESS;
+CASE_HEIGHT = CASE_THICKNESS_BOTTOM + PCB_THICKNESS + CONNECTOR_HEIGHT;
+
+CAVITY_WIDTH = INNER_WIDTH;
+CAVITY_DEPTH = INNER_DEPTH;
+CAVITY_HEIGHT = INNER_HEIGHT;
+
+CUTOUT_C1_X = 40 + CASE_THICKNESS/2;
+CUTOUT_C1_Y = CASE_DEPTH / 2;
+CUTOUT_C1_Z = CASE_THICKNESS_BOTTOM + PCB_THICKNESS;
+CUTOUT_C1_WIDTH = 10 + CASE_THICKNESS;
+CUTOUT_C1_DEPTH = 4*2.54 + 2*0.2;
+CUTOUT_C1_HEIGHT = CONNECTOR_HEIGHT;
+
+CUTOUT_C2_X = 5 - CASE_THICKNESS/2;
+CUTOUT_C2_Y = CASE_DEPTH / 2;
+CUTOUT_C2_Z = CASE_THICKNESS_BOTTOM + PCB_THICKNESS;
+CUTOUT_C2_WIDTH = 10 + CASE_THICKNESS;
+CUTOUT_C2_DEPTH = 4*2.54 + 2*0.2;
+CUTOUT_C2_HEIGHT = CONNECTOR_HEIGHT;
+  
+module box(x, y, z, w, d, h) {
+  translate([x, y, z])
+  linear_extrude(height = h)
+  polygon(
+    [
+      [-w/2, -d/2],
+      [+w/2, -d/2],
+      [-w/2, +d/2],
+      [+w/2, +d/2],
+    ],
+    [
+      [0, 1, 3, 2],  
+    ]
+  );
+}
+
+module outer_shape() {
+  translate([-CASE_THICKNESS, -CASE_THICKNESS, 0])
+  box(CASE_WIDTH/2, CASE_DEPTH/2, 0, CASE_WIDTH, CASE_DEPTH, CASE_HEIGHT);
+}
+
+module cavity() {
+  box(CAVITY_WIDTH/2, CAVITY_DEPTH/2, 0, CAVITY_WIDTH, CAVITY_DEPTH, CAVITY_HEIGHT);
+}
+              
+module cutout_connectors() {
+  box(CUTOUT_C1_X, CUTOUT_C1_Y, CUTOUT_C1_Z, CUTOUT_C1_WIDTH, CUTOUT_C1_DEPTH, CUTOUT_C1_HEIGHT);
+  box(CUTOUT_C2_X, CUTOUT_C2_Y, CUTOUT_C2_Z, CUTOUT_C2_WIDTH, CUTOUT_C2_DEPTH, CUTOUT_C2_HEIGHT);
+}
+  
+module case_base() {
+    difference() {
+        outer_shape();
+        cavity();
+        cutout_connectors();
+    }
+}
+
+difference() {    
+    rotate([180,0,0]) translate([0, 0, -CASE_HEIGHT])
+    case_base();
+}
