@@ -68,6 +68,36 @@ def grid(name, f, xstart, xstop, xstep, ystart, ystop, ystep, *args, **kwargs):
     )
     
 
+def fill_rect_x(xstart, ystart, xstop, ystop, ystep):
+    return (
+        '',
+        f'(fill_rect_x at xstart={xstart}, ystart={ystart}, xstop={xstop}, ystop={ystop}, ystep={ystep})',
+        (
+            (
+                position(xstart if i % 2 == 0 else xstop, ystart + i*ystep),
+                mill_down(),
+                line_to(xstop if i % 2 == 0 else xstart, ystart + i*ystep),
+                mill_up(),
+            ) for i in range(int((ystop - ystart) / ystep))
+        )
+    )
+
+
+def fill_rect_y(xstart, ystart, xstop, ystop, xstep):
+    return (
+        '',
+        f'(fill_rect_y at xstart={xstart}, ystart={ystart}, xstop={xstop}, ystop={ystop}, xstep={xstep})',
+        (
+            (
+                position(xstart + i*xstep, ystart if i % 2 == 0 else ystop),
+                mill_down(),
+                line_to(xstart + i*xstep, ystop if i % 2 == 0 else ystart),
+                mill_up(),
+            ) for i in range(int((xstop - xstart) / xstep))
+        )
+    )
+
+
 def circle(x, y, d):
     return (
         '',
