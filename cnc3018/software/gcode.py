@@ -25,6 +25,7 @@ class GCode(object):
     def with_spindle(self, *what):
         return (
             self.mill_up(),
+            self.spindle_speed(self.SPINDLE_SPEED if self.SPINDLE_SPEED else 500),
             self.spindle_start(),
             self.spindle_wait(),
             *what,
@@ -37,6 +38,9 @@ class GCode(object):
             'G21 (Metric Mode)',
             'G90 (Absolute Coordinates)',
         )
+
+    def spindle_speed(self, speed):
+        return f'S{speed} (Set spindle speed)'
 
     def spindle_start(self):
         return 'M03 (Start spindle)'
@@ -59,6 +63,30 @@ class GCode(object):
             f'({name})',
             (f(x, y, *args, **kwargs) for x in self.float_range(xstart, xstop, xstep) for y in self.float_range(ystart, ystop, ystep))
 #            (f(x, y, *args, **kwargs) for x in range(xstart, xstop, xstep) for y in range(ystart, ystop, ystep)),
+        )
+
+    def rect(self, xstart, ystart, xstop, ystop, from_z=None, to_z=None, z_step=None):
+        if from_z is None: from_z = self.Z_FROM
+        if to_z is None: to_z = self.Z_DOWN
+        if z_step is None: z_step = self.Z_STEP
+        return (
+            '',
+            f'(rect at xstart={xstart}, ystart={ystart}, xstop={xstop}, ystop={ystop})',
+            self.position(xstart, ystart),
+            self.position_z(),
+            (
+                (
+                    '',
+                    f'(rect layer {k+1})',
+                    self.mill_down(from_z - (k+1) * z_step),
+                    self.line_to(xstop, ystart),
+                    self.line_to(xstop, ystop),
+                    self.line_to(xstart, ystop),
+                    self.line_to(xstart, ystart),
+                ) for k in range(int((from_z - to_z) / z_step))
+            ),
+            '',
+            self.mill_up(),
         )
 
     def pyramidoid(self, xstart, ystart, xstop, ystop, xstep, ystep, zstep, from_z, to_z):
@@ -197,7 +225,7 @@ class GCode(object):
         return f'G00 X{x:.4f} Y{y:.4f}'
 
     def position_z(self):
-        return f'G00 Z{self.Z_THRESHOLD:.4f} (fast mill down)'
+        return f'G00 Z{self.Z_THRESHOLD:.4f} (fast z positioning)'
 
     def line_to(self, x, y):
         return f'G01 X{x:.4f} Y{y:.4f} F{self.FEED_RATE_XY:.4f}'
@@ -212,7 +240,4 @@ class GCode(object):
         )
 
     def mill_down(self, z=None):
-        return (
-            f'G00 Z{self.Z_THRESHOLD:.4f} (fast mill down)',
-            f'G01 Z{(z if z else self.Z_DOWN):.4f} F{self.FEED_RATE_Z:.4f} (mill down)'
-        )
+        return f'G01 Z{(z if z else self.Z_DOWN):.4f} F{self.FEED_RATE_Z:.4f} (mill down)'
