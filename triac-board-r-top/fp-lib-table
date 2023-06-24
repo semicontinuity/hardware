@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name "triac-board")(type "KiCad")(uri "/home/igorkarpov/Projects/github.com/semicontinuity/hardware/triac-board/triac-board.pretty")(options "")(descr ""))
+)
