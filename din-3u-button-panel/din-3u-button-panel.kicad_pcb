@@ -125,7 +125,7 @@
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 93323b1f-cef9-41b1-9330-b9e08bad55c1)
     )
-    (fp_text value "V_ST_HWS" (at 2.54 5.66) (layer "F.Fab")
+    (fp_text value "V_ST_HWS" (at 2.54 5.66) (layer "F.Fab") hide
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp e0df0689-4413-4ae8-ab5a-c2fb4b0f1309)
     )
@@ -220,7 +220,7 @@
 
   (footprint "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal" (layer "F.Cu")
     (tstamp 16cfe7c8-8737-4326-86a6-e23ec77cc742)
-    (at 24.7 179)
+    (at 117.82 138)
     (descr "Terminal Block Phoenix MKDS-1,5-2-5.08, 2 pins, pitch 5.08mm, size 10.2x9.8mm^2, drill diamater 1.3mm, pad diameter 2.6mm, see http://www.farnell.com/datasheets/100425.pdf, script-generated using https://github.com/pointhi/kicad-footprint-generator/scripts/TerminalBlock_Phoenix")
     (tags "THT Terminal Block Phoenix MKDS-1,5-2-5.08 pitch 5.08mm size 10.2x9.8mm^2 drill 1.3mm pad 2.6mm")
     (property "Sheetfile" "din-3u-button-panel.kicad_sch")
@@ -233,7 +233,7 @@
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 512e7752-1ea8-4b7d-9610-114cd8f4c800)
     )
-    (fp_text value "Screw_Terminal_01x02" (at 2.54 5.66) (layer "F.Fab")
+    (fp_text value "Screw_Terminal_01x02" (at 2.54 5.66) (layer "F.Fab") hide
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 5d5637b5-f6cc-4d0c-bf87-45f34e610928)
     )
@@ -328,7 +328,7 @@
 
   (footprint "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal" (layer "F.Cu")
     (tstamp 1e6fc214-3e67-4a03-b562-18bf37a768a5)
-    (at 24.7 155.28)
+    (at 97.5 138)
     (descr "Terminal Block Phoenix MKDS-1,5-2-5.08, 2 pins, pitch 5.08mm, size 10.2x9.8mm^2, drill diamater 1.3mm, pad diameter 2.6mm, see http://www.farnell.com/datasheets/100425.pdf, script-generated using https://github.com/pointhi/kicad-footprint-generator/scripts/TerminalBlock_Phoenix")
     (tags "THT Terminal Block Phoenix MKDS-1,5-2-5.08 pitch 5.08mm size 10.2x9.8mm^2 drill 1.3mm pad 2.6mm")
     (property "Sheetfile" "din-3u-button-panel.kicad_sch")
@@ -341,7 +341,7 @@
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 14c6fa7c-1bb3-40be-99a2-a61f1804ebb3)
     )
-    (fp_text value "Screw_Terminal_01x02" (at 2.54 5.66) (layer "F.Fab")
+    (fp_text value "Screw_Terminal_01x02" (at 2.54 5.66) (layer "F.Fab") hide
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp ecb42eeb-727a-4589-b208-a13482c83ea3)
     )
@@ -436,7 +436,7 @@
 
   (footprint "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal" (layer "F.Cu")
     (tstamp 48c1b1df-7ed9-4a70-9cb4-8f567e259010)
-    (at 36.92 167.14)
+    (at 112.66 62 180)
     (descr "Terminal Block Phoenix MKDS-1,5-2-5.08, 2 pins, pitch 5.08mm, size 10.2x9.8mm^2, drill diamater 1.3mm, pad diameter 2.6mm, see http://www.farnell.com/datasheets/100425.pdf, script-generated using https://github.com/pointhi/kicad-footprint-generator/scripts/TerminalBlock_Phoenix")
     (tags "THT Terminal Block Phoenix MKDS-1,5-2-5.08 pitch 5.08mm size 10.2x9.8mm^2 drill 1.3mm pad 2.6mm")
     (property "Sheetfile" "din-3u-button-panel.kicad_sch")
@@ -449,7 +449,7 @@
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 2d0b2c2a-3a88-4dbf-b5e6-af447a1f3f4a)
     )
-    (fp_text value "W_CT_CWS" (at 2.54 5.66) (layer "F.Fab")
+    (fp_text value "W_CT_CWS" (at 2.54 5.66) (layer "F.Fab") hide
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 16d4387c-d087-4620-b4e0-9bb48dc4cf9f)
     )
@@ -531,9 +531,9 @@
       (stroke (width 0.1) (type solid)) (fill none) (layer "F.Fab") (tstamp cd3da22b-e522-4cbc-9aa4-a1cf851e10f1))
     (fp_circle (center 5.08 0) (end 6.58 0)
       (stroke (width 0.1) (type solid)) (fill none) (layer "F.Fab") (tstamp 42ec89fa-56d2-4853-9c71-165ac2491093))
-    (pad "1" thru_hole rect (at 0 0) (size 2.6 2.6) (drill 1.3) (layers "*.Cu" "*.Mask")
+    (pad "1" thru_hole rect (at 0 0 180) (size 2.6 2.6) (drill 1.3) (layers "*.Cu" "*.Mask")
       (net 13 "/X7") (pinfunction "Pin_1") (pintype "passive") (tstamp eb542c83-530d-4a66-8f89-26ff32299fa1))
-    (pad "2" thru_hole circle (at 5.08 0) (size 2.6 2.6) (drill 1.3) (layers "*.Cu" "*.Mask")
+    (pad "2" thru_hole circle (at 5.08 0 180) (size 2.6 2.6) (drill 1.3) (layers "*.Cu" "*.Mask")
       (net 14 "/X6") (pinfunction "Pin_2") (pintype "passive") (tstamp 7ef7ff02-152c-4324-947e-df059128c8c5))
     (model "${KICAD6_3DMODEL_DIR}/TerminalBlock_Phoenix.3dshapes/TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal.wrl"
       (offset (xyz 0 0 0))
@@ -544,7 +544,7 @@
 
   (footprint "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal" (layer "F.Cu")
     (tstamp 4ceda469-1676-44ae-bce2-68eac45f98a3)
-    (at 36.92 179)
+    (at 122.82 62 180)
     (descr "Terminal Block Phoenix MKDS-1,5-2-5.08, 2 pins, pitch 5.08mm, size 10.2x9.8mm^2, drill diamater 1.3mm, pad diameter 2.6mm, see http://www.farnell.com/datasheets/100425.pdf, script-generated using https://github.com/pointhi/kicad-footprint-generator/scripts/TerminalBlock_Phoenix")
     (tags "THT Terminal Block Phoenix MKDS-1,5-2-5.08 pitch 5.08mm size 10.2x9.8mm^2 drill 1.3mm pad 2.6mm")
     (property "Sheetfile" "din-3u-button-panel.kicad_sch")
@@ -557,7 +557,7 @@
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 0ff6e51a-0377-45d9-b2c5-8ace1c81dc41)
     )
-    (fp_text value "AUX_INS" (at 2.54 5.66) (layer "F.Fab")
+    (fp_text value "AUX_INS" (at 2.54 5.66) (layer "F.Fab") hide
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp f50fc1cb-d6cd-47f0-9c00-e5041841b5e5)
     )
@@ -639,9 +639,9 @@
       (stroke (width 0.1) (type solid)) (fill none) (layer "F.Fab") (tstamp 3b22c362-7ec3-49d9-827b-5ec2ee6775ab))
     (fp_circle (center 5.08 0) (end 6.58 0)
       (stroke (width 0.1) (type solid)) (fill none) (layer "F.Fab") (tstamp b317a8da-a053-45e5-9a15-4dd58548a12a))
-    (pad "1" thru_hole rect (at 0 0) (size 2.6 2.6) (drill 1.3) (layers "*.Cu" "*.Mask")
+    (pad "1" thru_hole rect (at 0 0 180) (size 2.6 2.6) (drill 1.3) (layers "*.Cu" "*.Mask")
       (net 15 "/X9") (pinfunction "Pin_1") (pintype "passive") (tstamp cdf0f67b-3ff8-4614-9774-b5aa30b3a655))
-    (pad "2" thru_hole circle (at 5.08 0) (size 2.6 2.6) (drill 1.3) (layers "*.Cu" "*.Mask")
+    (pad "2" thru_hole circle (at 5.08 0 180) (size 2.6 2.6) (drill 1.3) (layers "*.Cu" "*.Mask")
       (net 16 "/X8") (pinfunction "Pin_2") (pintype "passive") (tstamp 57d89449-fd58-4c91-a7c0-c010dcb9e683))
     (model "${KICAD6_3DMODEL_DIR}/TerminalBlock_Phoenix.3dshapes/TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal.wrl"
       (offset (xyz 0 0 0))
@@ -652,7 +652,7 @@
 
   (footprint "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal" (layer "F.Cu")
     (tstamp 7895572f-19ee-408f-ad54-8cef4839a48c)
-    (at 24.7 167.14)
+    (at 107.66 138)
     (descr "Terminal Block Phoenix MKDS-1,5-2-5.08, 2 pins, pitch 5.08mm, size 10.2x9.8mm^2, drill diamater 1.3mm, pad diameter 2.6mm, see http://www.farnell.com/datasheets/100425.pdf, script-generated using https://github.com/pointhi/kicad-footprint-generator/scripts/TerminalBlock_Phoenix")
     (tags "THT Terminal Block Phoenix MKDS-1,5-2-5.08 pitch 5.08mm size 10.2x9.8mm^2 drill 1.3mm pad 2.6mm")
     (property "Sheetfile" "din-3u-button-panel.kicad_sch")
@@ -665,7 +665,7 @@
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 8ea84589-51cb-4b28-882b-bec2931576bc)
     )
-    (fp_text value "Screw_Terminal_01x02" (at 2.54 5.66) (layer "F.Fab")
+    (fp_text value "Screw_Terminal_01x02" (at 2.54 5.66) (layer "F.Fab") hide
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 4eaef6ca-296d-4ba7-8052-be134389288e)
     )
@@ -760,7 +760,7 @@
 
   (footprint "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal" (layer "F.Cu")
     (tstamp a9503fcb-defd-4b13-b8e4-ff5c37d52133)
-    (at 36.92 155.28)
+    (at 102.5 62 180)
     (descr "Terminal Block Phoenix MKDS-1,5-2-5.08, 2 pins, pitch 5.08mm, size 10.2x9.8mm^2, drill diamater 1.3mm, pad diameter 2.6mm, see http://www.farnell.com/datasheets/100425.pdf, script-generated using https://github.com/pointhi/kicad-footprint-generator/scripts/TerminalBlock_Phoenix")
     (tags "THT Terminal Block Phoenix MKDS-1,5-2-5.08 pitch 5.08mm size 10.2x9.8mm^2 drill 1.3mm pad 2.6mm")
     (property "Sheetfile" "din-3u-button-panel.kicad_sch")
@@ -773,7 +773,7 @@
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 3c1c100e-a1f1-4323-9361-daf52e1ee921)
     )
-    (fp_text value "W_CT_HWS" (at 2.54 5.66) (layer "F.Fab")
+    (fp_text value "W_CT_HWS" (at 2.54 5.66) (layer "F.Fab") hide
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 043bc120-9970-4003-9f76-0140d9bc3c01)
     )
@@ -855,9 +855,9 @@
       (stroke (width 0.1) (type solid)) (fill none) (layer "F.Fab") (tstamp f41edba4-05f5-4fe4-8b28-023cf906f08e))
     (fp_circle (center 5.08 0) (end 6.58 0)
       (stroke (width 0.1) (type solid)) (fill none) (layer "F.Fab") (tstamp f67eae38-71db-4f3e-b094-f7b0b6a8f01c))
-    (pad "1" thru_hole rect (at 0 0) (size 2.6 2.6) (drill 1.3) (layers "*.Cu" "*.Mask")
+    (pad "1" thru_hole rect (at 0 0 180) (size 2.6 2.6) (drill 1.3) (layers "*.Cu" "*.Mask")
       (net 11 "/X5") (pinfunction "Pin_1") (pintype "passive") (tstamp 218164c7-f0d5-421b-ba8e-88013b71f9ed))
-    (pad "2" thru_hole circle (at 5.08 0) (size 2.6 2.6) (drill 1.3) (layers "*.Cu" "*.Mask")
+    (pad "2" thru_hole circle (at 5.08 0 180) (size 2.6 2.6) (drill 1.3) (layers "*.Cu" "*.Mask")
       (net 12 "/X4") (pinfunction "Pin_2") (pintype "passive") (tstamp b2eb8e66-dc09-4c8c-980f-8e2a6f80b8fc))
     (model "${KICAD6_3DMODEL_DIR}/TerminalBlock_Phoenix.3dshapes/TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal.wrl"
       (offset (xyz 0 0 0))
@@ -881,7 +881,7 @@
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp f29cc5ae-4ad8-4aa3-934d-caa79adbd6a3)
     )
-    (fp_text value "Screw_Terminal_01x02" (at 2.54 5.66) (layer "F.Fab")
+    (fp_text value "Screw_Terminal_01x02" (at 2.54 5.66) (layer "F.Fab") hide
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 29fcce1e-a671-48e9-94e6-3d215727c522)
     )
@@ -989,7 +989,7 @@
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 4f9b7f2b-3c39-4714-a0fd-3ea01398e798)
     )
-    (fp_text value "Screw_Terminal_01x02" (at 2.54 5.66) (layer "F.Fab")
+    (fp_text value "Screw_Terminal_01x02" (at 2.54 5.66) (layer "F.Fab") hide
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 57f5a6ff-e5aa-4544-948c-af045ec5b7d0)
     )
@@ -1084,7 +1084,7 @@
 
   (footprint "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal" (layer "F.Cu")
     (tstamp da657f2c-7946-4f33-99b0-857925d6ddb3)
-    (at 36.92 143.42)
+    (at 92.34 62 180)
     (descr "Terminal Block Phoenix MKDS-1,5-2-5.08, 2 pins, pitch 5.08mm, size 10.2x9.8mm^2, drill diamater 1.3mm, pad diameter 2.6mm, see http://www.farnell.com/datasheets/100425.pdf, script-generated using https://github.com/pointhi/kicad-footprint-generator/scripts/TerminalBlock_Phoenix")
     (tags "THT Terminal Block Phoenix MKDS-1,5-2-5.08 pitch 5.08mm size 10.2x9.8mm^2 drill 1.3mm pad 2.6mm")
     (property "Sheetfile" "din-3u-button-panel.kicad_sch")
@@ -1097,7 +1097,7 @@
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 9b7a5e58-b67b-49e0-b718-cce08c6cb688)
     )
-    (fp_text value "V_ST_CWS" (at 2.54 5.66) (layer "F.Fab")
+    (fp_text value "V_ST_CWS" (at 2.54 5.66) (layer "F.Fab") hide
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 290e4b3b-eec9-4adc-827b-7a7ae3f3a1f5)
     )
@@ -1179,9 +1179,9 @@
       (stroke (width 0.1) (type solid)) (fill none) (layer "F.Fab") (tstamp a5501a68-26df-40d6-8256-4fe22a0b1b3b))
     (fp_circle (center 5.08 0) (end 6.58 0)
       (stroke (width 0.1) (type solid)) (fill none) (layer "F.Fab") (tstamp 71fb6382-1c8e-4459-b843-c6ae6aa68c6e))
-    (pad "1" thru_hole rect (at 0 0) (size 2.6 2.6) (drill 1.3) (layers "*.Cu" "*.Mask")
+    (pad "1" thru_hole rect (at 0 0 180) (size 2.6 2.6) (drill 1.3) (layers "*.Cu" "*.Mask")
       (net 9 "/X3") (pinfunction "Pin_1") (pintype "passive") (tstamp 6aaa1621-3ea4-40c8-b019-8667642dab36))
-    (pad "2" thru_hole circle (at 5.08 0) (size 2.6 2.6) (drill 1.3) (layers "*.Cu" "*.Mask")
+    (pad "2" thru_hole circle (at 5.08 0 180) (size 2.6 2.6) (drill 1.3) (layers "*.Cu" "*.Mask")
       (net 10 "/X2") (pinfunction "Pin_2") (pintype "passive") (tstamp ce8a2bd2-2c9f-4119-aef9-7d6130a461a8))
     (model "${KICAD6_3DMODEL_DIR}/TerminalBlock_Phoenix.3dshapes/TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal.wrl"
       (offset (xyz 0 0 0))
