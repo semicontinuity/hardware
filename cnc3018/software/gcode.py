@@ -1,3 +1,6 @@
+import math
+
+
 def traverse(elements):
     for e in elements:
         if type(e) is str:
@@ -63,6 +66,23 @@ class GCode(object):
             f'({name})',
             (f(x, y, *args, **kwargs) for x in self.float_range(xstart, xstop, xstep) for y in self.float_range(ystart, ystop, ystep))
 #            (f(x, y, *args, **kwargs) for x in range(xstart, xstop, xstep) for y in range(ystart, ystop, ystep)),
+        )
+
+    def deep_line(self, x_from, y_from, x_to, y_to, z_step=None, z_from=None, z_to=None):
+        if z_from is None: z_from = self.Z_FROM
+        if z_to   is None: z_to   = self.Z_DOWN
+        if z_step is None: z_step = self.Z_STEP
+        return (
+            '',
+            f'(deep_line at x_from={x_from}, y_from={y_from}, x_to={x_to}, y_to={y_to})',
+            (
+                (
+                    self.position(x_from if i % 2 == 0 else x_to, y_from if i % 2 == 0 else y_to),
+                    self.mill_down(z_from - (i+1) * z_step),
+                    self.line_to(x_to if i % 2 == 0 else x_from, y_to if i % 2 == 0 else y_from),
+                ) for i in range(int((z_from - z_to) / z_step))
+            ),
+            self.mill_up(),
         )
 
     def rect(self, xstart, ystart, xstop, ystop, from_z=None, to_z=None, z_step=None):
@@ -152,6 +172,20 @@ class GCode(object):
             self.mill_up(),
         )
 
+    def counter_clockwise_arc(self, x, y, d, a, b):
+        sin_a = math.sin(a)
+        cos_a = math.cos(a)
+        sin_b = math.sin(b)
+        cos_b = math.cos(b)
+        return (
+            '',
+            f'(arc at x={x}, y={y}, d={d}, a={a}, b={b})',
+            self.position(x + d/2*cos_a, y + d/2*sin_a),
+            self.mill_down(),
+            self.counter_clockwise_arc_to(x + d/2*cos_b, y + d/2*sin_b, -d/2*cos_a, -d/2*sin_a),
+            self.mill_up(),
+        )
+
     def cylinder(self, x, y, d, from_z, to_z, zstep):
         return (
             '',
@@ -232,6 +266,9 @@ class GCode(object):
 
     def clockwise_arc_to(self, x, y, i, j):
         return f'G02 X{x:.4f} Y{y:.4f} I{i:.4f} J{j:.4f} F{self.FEED_RATE_XY:.4f}'
+
+    def counter_clockwise_arc_to(self, x, y, i, j):
+        return f'G03 X{x:.4f} Y{y:.4f} I{i:.4f} J{j:.4f} F{self.FEED_RATE_XY:.4f}'
 
     def mill_up(self):
         return (
